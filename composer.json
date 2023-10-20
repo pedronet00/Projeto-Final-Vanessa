@@ -1,0 +1,14 @@
+{
+    "name": "php/empresajrtoledo",
+    "autoload": {
+        "psr-4": {
+            "Php\\Empresajrtoledo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "toledooprudente"
+        }
+    ],
+    "require": {}
+}
