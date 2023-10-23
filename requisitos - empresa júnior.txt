@@ -1,0 +1,14 @@
+Layout (Figma e HTML e CSS e Javascript) - Pedro
+
+Função Fundamental:
+- Acessar o sistema: Lucas Siqueira
+
+Funções Básicas:
+- Manter Notícias: Título, Usuário, Data, Hora, Corpo do Texto, 1 imagem (link) - Gustavo
+- Manter Membros: Nome, Curso, Cargo, Foto (link) - João 
+- Manter Serviços: Nome, Descrição, Funcionamento, Foto (link) - Bruno
+- Manter clientes e parceiros: Nome, Foto, Descrição do Projeto - Lucas 
+- Manter processo seletivo para membros associados: Nome, email, telefone, curso, termo, RA - Felipe
+- Manter processo seletivo para consultores: Nome, email, telefone, curso, termo, RA - Julia
+- Manter depoimentos: Nome, Curso, Ano de Formatura, Depoimento - André
+- Manter resultados do IPT: Data inicial e final, relatório - Pedro
