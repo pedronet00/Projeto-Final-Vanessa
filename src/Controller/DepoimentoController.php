@@ -19,14 +19,14 @@
 
         public function excluir($params){
              //pega os dados para excluir e alterar
-             $DepoimentoDAO = new DepoimentoDAO();
+             $depoimentoDAO = new DepoimentoDAO();
              $id = $params[1];
-             $resultado= $DepoimentoDAO->consularPorId($id);
-            require "../src/View/Categoria/excluir.php";
+             $resultado= $depoimentoDAO->consularPorId($id);
+            require "../src/View/Depoimento/excluir.php";
         }
       
         public function gravar(){
-            $depoimento = new Depoimento('', $_POST['descricao']);
+            $depoimento = new Depoimento('', $_POST['nome'], $_POST['curso'], $_POST['ano_formatura'], $_POST['depoimento']);
             $depoimentoDAO = new DepoimentoDAO();
             if($depoimentoDAO->inserir($depoimento)){
                 $_SESSION['gravar']=true;
@@ -51,7 +51,7 @@
         }
 
         public function deletar($params){
-            $depoimento = new Depoimento($params[1],'');
+            $depoimento = new Depoimento($params[1],'','','','');
             $depoimentoDAO = new DepoimentoDAO();
             session_start();
             if($depoimentoDAO->excluir($depoimento)){
