@@ -27,7 +27,7 @@
             <textarea class="form-control" id="data_noticia" rows="3"></textarea>
         </div>
         <div class="mb-3">
-            <label for="imagem" class="form-label">Imagem</label>
+            <label for="imagem" class="form-label">imagem</label>
             <textarea class="form-control" id="imagem" rows="3"></textarea>
         </div>
     </div>
