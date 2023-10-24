@@ -3,8 +3,8 @@
 namespace Php\Empresajrtoledo\Model\DAO;
 
 use Exception;
-use Php\Empresajrtoledo\Model\Entity\Membro;
-class MembroDAO{
+use Php\Empresajrtoledo\Model\Entity\Parceiro;
+class ParceiroDAO{
 
     private DAO $dao;
 
@@ -13,37 +13,37 @@ class MembroDAO{
         $this->dao = new DAO();
     }
 
-    public function inserir(Membro $Membro){
+    public function inserir(Parceiro $Parceiro){
 
         try{
-            $sql = "INSERT INTO Membro (descricao) VALUES (:descricao)";
+            $sql = "INSERT INTO Parceiro (nome,foto,descricao) VALUES (:nome,:foto,:descricao)";
             $ps = $this->dao->getConexao()->prepare($sql);
-            $ps->bindValue(":descricao", $Membro->getDescricao());   
+            $ps->bindValue(":nome,:foto,:descricao", $Parceiro->getNome());   
             return $ps->execute();
         } catch(Exception $e){
             return 0;
         }
     }
 
-    public function alterar(Membro $Membro){
+    public function alterar(Parceiro $Parceiro){
 
         try{
-            $sql = "UPDATE Membro SET descricao = :descricao WHERE id = :id";
+            $sql = "UPDATE Parceiro SET nome = :nome,:foto,:descricao WHERE id = :id";
             $ps = $this->dao->getConexao()->prepare($sql);
-            $ps->bindValue(":descricao", $Membro->getDescricao());            
-            $ps->bindValue(":id", $Membro->getId());
+            $ps->bindValue(":nome", $Parceiro->getNome());            
+            $ps->bindValue(":id", $Parceiro->getId());
             return $ps->execute();
         } catch(Exception $e){
             return 0;
         }
     }
 
-    public function excluir(Membro $Membro){
+    public function excluir(Parceiro $Parceiro){
 
         try{
-            $sql = "DELETE FROM Membro WHERE id = :id";
+            $sql = "DELETE FROM Parceiro WHERE id = :id";
             $ps = $this->dao->getConexao()->prepare($sql);         
-            $ps->bindValue(":id", $Membro->getId());
+            $ps->bindValue(":id", $Parceiro->getId());
             return $ps->execute();
         } catch(Exception $e){
             return 0;
@@ -53,7 +53,7 @@ class MembroDAO{
     public function consultar(){
 
         try {
-            $sql = "SELECT * FROM Membro";
+            $sql = "SELECT * FROM Parceiro";
             return $this->dao->getConexao()->query($sql);
         }catch (Exception $e){
             return 0;
@@ -63,7 +63,7 @@ class MembroDAO{
     public function consultarPorId($id){
 
         try{
-            $sql = "SELECT * FROM Membro WHERE id = :id";
+            $sql = "SELECT * FROM Parceiro WHERE id = :id";
             $ps = $this->dao->getConexao()->prepare($sql);
             $ps->bindValue(":id", $id);
             $ps->execute();
