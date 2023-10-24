@@ -1,24 +1,24 @@
 <?php
 
-namespace Php\Empresajrtoledo;
+namespace Php\Empresajrtoledo\Model\Entity;
 
 class Noticia{
     private $id;
     private $titulo;
     private $usuario_id; //lucas benicio irá fornecer apartir da sessão
-    private $data;
+    private $data_noticia;
     private $hora;
     private $texto;
     private $imagem;
 
 
 
-    public function __construct($id, $titulo, $usuario_id, $data, $hora, $texto, $imagem)
+    public function __construct($id, $titulo, $usuario_id, $data_noticia, $hora, $texto, $imagem)
     {
         $this->setId($id);
         $this->setTitulo(($titulo)); 
         $this->setUsuario_id($usuario_id);
-        $this->setData(($data)); 
+        $this->setData_noticia(($data_noticia)); 
         $this->setHora($hora);
         $this->setTexto(($texto));   
         $this->setImagem(($imagem));  
@@ -36,8 +36,8 @@ class Noticia{
         $this->usuario_id = $usuario_id;
     }
 
-    public function setData($data){
-        $this->data = $data;
+    public function setData_noticia($data_noticia){
+        $this->data_noticia = $data_noticia;
     }
 
     public function setHora($hora){
@@ -64,8 +64,8 @@ class Noticia{
         return $this->usuario_id;
     }
 
-    public function getData(){
-        return $this->data;
+    public function getData_noticia(){
+        return $this->data_noticia;
     }
 
     public function getHora(){
