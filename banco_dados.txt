@@ -11,7 +11,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema banco_php
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `banco_php` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `empresa_junior` DEFAULT CHARACTER SET utf8 ;
 USE `banco_php` ;
 
 -- -----------------------------------------------------
