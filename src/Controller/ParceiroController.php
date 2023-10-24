@@ -1,6 +1,6 @@
 <?php
 
-namespace Php\Empresajrtoledo\Controller\Model\DAO;
+namespace Php\Empresajrtoledo\Controller;
 
 use Php\Empresajrtoledo\Model\Entity\Parceiro;
 use Php\Empresajrtoledo\Model\DAO\ParceiroDAO;
