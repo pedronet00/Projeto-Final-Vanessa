@@ -1,6 +1,6 @@
 <?php
 
-namespace Php\Empresajrtoledo;
+namespace Php\Empresajrtoledo\Model\DAO;
 
 use PDO;
 
