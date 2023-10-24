@@ -16,9 +16,11 @@ class ParceiroDAO{
     public function inserir(Parceiro $Parceiro){
 
         try{
-            $sql = "INSERT INTO Parceiro (nome,foto,descricao) VALUES (:nome,:foto,:descricao)";
+            $sql = "INSERT INTO Parceiro (nome,imagem,descricao) VALUES (:nome, :imagem, :descricao)";
             $ps = $this->dao->getConexao()->prepare($sql);
-            $ps->bindValue(":nome,:foto,:descricao", $Parceiro->getNome());   
+            $ps->bindValue(":nome", $Parceiro->getNome());
+            $ps->bindValue(":imagem", $Parceiro->getImagem());
+            $ps->bindValue(":descricao", $Parceiro->getDescricao());
             return $ps->execute();
         } catch(Exception $e){
             return 0;
@@ -28,10 +30,11 @@ class ParceiroDAO{
     public function alterar(Parceiro $Parceiro){
 
         try{
-            $sql = "UPDATE Parceiro SET nome = :nome,:foto,:descricao WHERE id = :id";
+            $sql = "UPDATE Parceiro SET nome = :nome, imagem = :imagem, descricao = :descricao WHERE id = :id";
             $ps = $this->dao->getConexao()->prepare($sql);
             $ps->bindValue(":nome", $Parceiro->getNome());            
-            $ps->bindValue(":id", $Parceiro->getId());
+            $ps->bindValue(":id", $Parceiro->getId());            
+            $ps->bindValue(":imagem", $Parceiro->getImagem());
             return $ps->execute();
         } catch(Exception $e){
             return 0;

@@ -6,14 +6,14 @@ class Parceiro {
 
     private $id;
     private $nome;
-    private $foto;
+    private $imagem;
     private $descricao;
 
-    public function __construct($id, $nome, $foto, $descricao)
+    public function __construct($id, $nome, $imagem, $descricao)
     {
         $this->setId($id);
         $this->setNome($nome);
-        $this->setFoto($foto);
+        $this->setImagem($imagem);
         $this->setDescricao($descricao);
     }
 
@@ -25,8 +25,8 @@ class Parceiro {
         $this->nome = $nome;
     }
     
-    public function setFoto($foto){
-        $this->foto = $foto;
+    public function setImagem($imagem){
+        $this->imagem = $imagem;
     }
     
     public function setDescricao($descricao){
@@ -41,8 +41,8 @@ class Parceiro {
         return $this->nome;
     }
 
-    public function getFoto(){
-        return $this->foto;
+    public function getImagem(){
+        return $this->imagem;
     }
 
     public function getDescricao(){
