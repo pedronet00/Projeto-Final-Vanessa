@@ -35,8 +35,6 @@ $router->post("/depoimento/deletar/{id}",
     'Php\Empresajrtoledo\Controller\DepoimentoController@deletar'
 );
 
-
-
 $resultado = $router->handler();
 
 if (!$resultado){
