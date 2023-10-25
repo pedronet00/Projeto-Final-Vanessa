@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col">
                 <label for="depoimento" class="form-label">
-                    Informe a descrição:
+                    Informe os dados:
                 </label>
                 <input type="text" class="form-control" 
                     name="depoimento" id="depoimento"
