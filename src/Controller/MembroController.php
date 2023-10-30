@@ -2,9 +2,9 @@
 
 namespace Php\Empresajrtoledo\Controller;
 
-use Php\Empresajrtoledo\Model\DAO\FuncoesDAO;
+use Php\Empresajrtoledo\Model\DAO\MembroDAO;
 
-class FuncoesController
+class MembroController
 {
     // ...
 
@@ -16,18 +16,18 @@ class FuncoesController
 
     public function alterar($params)
     {
-        $FuncoesDAO = new FuncoesDAO();
+        $MembroDAO = new MembroDAO();
         $id = $params[1];
-        $resultado = $FuncoesDAO->consultarPorId($id);
+        $resultado = $MembroDAO->consultarPorId($id);
         // Página para alterar o registro com campos Nome, Curso, Cargo e Foto.
         require '../src/View/Funcoes/alterar.php';
     }
 
     public function excluir($params)
     {
-        $FuncoesDAO = new FuncoesDAO();
+        $MembroDAO = new MembroDAO();
         $id = $params[1];
-        $resultado = $FuncoesDAO->consultarPorId($id);
+        $resultado = $MembroDAO->consultarPorId($id);
         // Página para excluir o registro com campos Nome, Curso, Cargo e Foto.
         require '../src/View/Funcoes/excluir.php';
     }
@@ -40,9 +40,9 @@ class FuncoesController
         $Foto = $_POST['Foto'];
 
         // Lógica para gravar os dados no banco de dados usando FuncoesDAO
-        $FuncoesDAO = new FuncoesDAO();
+        $MembroDAO = new MembroDAO();
         session_start();
-        if ($FuncoesDAO->inserir($Nome, $Curso, $Cargo, $Foto)) {
+        if ($MembroDAO->inserir($Nome, $Curso, $Cargo, $Foto)) {
             $_SESSION['gravar'] = true;
         } else {
             $_SESSION['gravar'] = false;
@@ -59,9 +59,9 @@ class FuncoesController
         $Foto = $_POST['Foto'];
 
         // Lógica para editar os dados no banco de dados usando FuncoesDAO
-        $FuncoesDAO = new FuncoesDAO();
+        $MembroDAO = new MembroDAO();
         session_start();
-        if ($FuncoesDAO->alterar($id, $Nome, $Curso, $Cargo, $Foto)) {
+        if ($MembroDAO->alterar($id, $Nome, $Curso, $Cargo, $Foto)) {
             $_SESSION['editar'] = true;
         } else {
             $_SESSION['editar'] = false;
@@ -74,9 +74,9 @@ class FuncoesController
         $id = $params[1];
 
         // Lógica para excluir o registro do banco de dados usando FuncoesDAO
-        $FuncoesDAO = new FuncoesDAO();
+        $MembroDAO = new MembroDAO();
         session_start();
-        if ($FuncoesDAO->excluir($id)) {
+        if ($MembroDAO->excluir($id)) {
             $_SESSION['deletar'] = true;
         } else {
             $_SESSION['deletar'] = false;
@@ -87,9 +87,9 @@ class FuncoesController
     public function index()
     {
         // Lógica para listar os registros do banco de dados usando FuncoesDAO
-        $FuncoesDAO = new FuncoesDAO();
-        $resultado = $FuncoesDAO->consultar();
+        $MembroDAO = new MembroDAO();
+        $resultado = $MembroDAO->consultar();
         // Página para listar os registros com campos Nome, Curso, Cargo e Foto.
-        require '../src/View/Funcoes/index.php';
+        require '../src/View/Membro/index.php';
     }
 }

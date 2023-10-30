@@ -3,10 +3,10 @@
 namespace Php\Empresajrtoledo\Model\DAO;
 
 use Exception;
-use Php\Empresajrtoledo\Model\Entity\Funcoes;
+use Php\Empresajrtoledo\Model\Entity\Membro;
 
 
-class FuncoesDAO{
+class MembroDAO{
 
     private DAO $dao;
 
@@ -15,15 +15,15 @@ class FuncoesDAO{
         $this->dao = new DAO();
     }
 
-    public function inserir(Funcoes $funcoes){
+    public function inserir(Membro $membro){
         try{
             $sql = "INSERT INTO membro (nome, curso, cargo, foto) VALUES (:nome, curso, cargo, foto)";
             $ps = $this->dao->getConexao()->prepare($sql);
-            $ps->bindValue(":id", $funcoes->getId());
-            $ps->bindValue(":Nome", $funcoes->getNome());
-            $ps->bindValue(":Curso", $funcoes->getCurso());
-            $ps->bindValue(":Cargo", $funcoes->getCargo());
-            $ps->bindValue(":Foto", $funcoes->getFoto());
+            $ps->bindValue(":id", $membro->getId());
+            $ps->bindValue(":Nome", $membro->getNome());
+            $ps->bindValue(":Curso", $membro->getCurso());
+            $ps->bindValue(":Cargo", $membro->getCargo());
+            $ps->bindValue(":Foto", $membro->getFoto());
             return $ps->execute();
 
         }catch(Exception  $e){
@@ -31,15 +31,15 @@ class FuncoesDAO{
         }
     }
 
-    public function alterar(Funcoes $funcoes){
+    public function alterar(Membro $membro){
         try{
             $sql = "UPDATE membro SET Nome, Curso, Cargo, Foto = :Nome, Curso, Cargo, Foto WHERE id = :id";
             $ps = $this->dao->getConexao()->prepare($sql);
-            $ps->bindValue(":id", $funcoes->getId());
-            $ps->bindValue(":Nome", $funcoes->getNome());
-            $ps->bindValue(":Curso", $funcoes->getCurso());
-            $ps->bindValue(":Cargo", $funcoes->getCargo());
-            $ps->bindValue(":Foto", $funcoes->getFoto());
+            $ps->bindValue(":id", $membro->getId());
+            $ps->bindValue(":Nome", $membro->getNome());
+            $ps->bindValue(":Curso", $membro->getCurso());
+            $ps->bindValue(":Cargo", $membro->getCargo());
+            $ps->bindValue(":Foto", $membro->getFoto());
 
             return $ps->execute();
 
@@ -48,15 +48,15 @@ class FuncoesDAO{
         }
     }
 
-    public function excluir(Funcoes $funcoes){
+    public function excluir(Membro $membro){
         try{
             $sql = "DELETE FROM membro  WHERE id, Nome, Curso, Cargo, Foto = :id, Nome, Curso, Cargo, Foto";
             $ps = $this->dao->getConexao()->prepare($sql);
-            $ps->bindValue(":id", $funcoes->getId());
-            $ps->bindValue(":Nome", $funcoes->getNome());
-            $ps->bindValue(":Curso", $funcoes->getCurso());
-            $ps->bindValue(":Cargo", $funcoes->getCargo());
-            $ps->bindValue(":Foto", $funcoes->getFoto());
+            $ps->bindValue(":id", $membro->getId());
+            $ps->bindValue(":Nome", $membro->getNome());
+            $ps->bindValue(":Curso", $membro->getCurso());
+            $ps->bindValue(":Cargo", $membro->getCargo());
+            $ps->bindValue(":Foto", $membro->getFoto());
             return $ps->execute();
 
         }catch(Exception  $e){

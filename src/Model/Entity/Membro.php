@@ -2,7 +2,7 @@
 
 namespace Php\Empresajrtoledo\Model\Entity;
 
-class Funcoes{
+class Membro{
     private $id;
     private $Nome;
     private $Curso;
