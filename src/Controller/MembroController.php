@@ -11,7 +11,7 @@ class MembroController
     public function inserir()
     {
         // Página para inserir um novo registro com campos Nome, Curso, Cargo e Foto.
-        require '../src/View/Funcoes/inserir.php';
+        require '../src/View/Membro/inserir.php';
     }
 
     public function alterar($params)

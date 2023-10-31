@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
+<?php
+require '../src/View/Header.php';
+?>
 <body>
     <div class="formulario" style="width: 50%; margin: 5% auto;">
         <form method="POST">
@@ -15,3 +13,6 @@
     </div>
 </body>
 </html>
+<?php
+require '../src/View/Footer.php';
+?>

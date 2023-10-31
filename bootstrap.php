@@ -7,6 +7,15 @@ $path = $_SERVER['PATH_INFO'] ?? '/';
 
 $router = new \Php\Empresajrtoledo\Router($method, $path);
 
+$router->get("/Membro/inserir", 
+    'Php\Empresajrtoledo\Controller\MembroController@inserir'
+    
+   
+);
+
+$router->post("/Membro/gravar", 'Php\Empresajrtoledo\Controller\MembroController@gravar');
+
+
 $resultado = $router->handler();
 
 if (!$resultado){
