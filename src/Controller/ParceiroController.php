@@ -32,15 +32,21 @@ class ParceiroController
     }
 
     public function gravar(){
-        $parceiro = new Parceiro('', $_POST['nome'], $_POST['imagem'], $_POST['descricao']);
-        $parceiroDAO = new ParceiroDAO();
         session_start();
-        if ($parceiroDAO->inserir($parceiro)){
-            $_SESSION['gravar'] = true;
-        }else {
-            $_SESSION['gravar'] = false;
+        $dir = "parceiros/";
+        $upload_file = $dir . basename($_FILES['imagem']['name']);
+        if(move_uploaded_file($_FILES["imagem"]["tmp_name"], $upload_file)){
+            $parceiro = new Parceiro('', $_POST['nome'], $upload_file, $_POST['descricao']);
+            $parceiroDAO = new ParceiroDAO();
+            if ($parceiroDAO->inserir($parceiro)){
+                $_SESSION['gravar'] = true;
+            }else {
+                $_SESSION['gravar'] = false;
+            }
+            $this->index();
+        }else{
+            $_SESSION['arquivo'] = false;
         }
-        $this->index();
     }
 
     public function editar($params){

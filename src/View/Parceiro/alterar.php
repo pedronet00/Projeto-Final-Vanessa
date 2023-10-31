@@ -5,7 +5,7 @@
 <div class="container mt-5">
 
     <h1>Alterar Parceiro</h1>
-    <form method="post" action="/Parceiro/editar/<?=$resultado['id']?>">
+    <form method="post" action="/Parceiro/editar/<?=$resultado['id']?>" enctype="multipart/form-data">
         
         <div class="row">
             <div class="col">
@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col">
                 <label for="imagem" class="form-label">Insira a imagem: </label>
-                <input type="text" class="form-control" name="imagem" id="image" value="<?=$resultado['imagem']?>"/>
+                <input type="file" class="form-control" name="imagem" id="image" value="<?=$resultado['imagem']?>"/>
             </div>
         </div>
 
