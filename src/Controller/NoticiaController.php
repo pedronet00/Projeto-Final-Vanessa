@@ -38,9 +38,9 @@ class NoticiaController
         $imagem = $_POST['imagem'] ?? ''; 
         $data_noticia = $_POST['data_noticia'] ?? ''; 
     
-        $noticia = new Noticia('', $usuario_id, $hora, $titulo, $texto, $imagem, $data_noticia); 
+        $noticia = new Noticia('', $titulo, $usuario_id, $data_noticia, $hora, $texto, $imagem); 
         $noticiaDAO = new NoticiaDAO();
-        session_start();
+         session_start();
         if ($noticiaDAO->inserir($noticia)) {
             $_SESSION['gravar'] = true;
         } else {
@@ -51,31 +51,44 @@ class NoticiaController
     
 
 
-    // public function editar($params)
-    // {
-    //     $noticia = new Noticia($params[], $_POST['']);
-    //     $noticiaDAO = new NoticiaDAO();
-    //     session_start();
-    //     if ($noticiaDAO->alterar($noticia)) {
-    //         $_SESSION['editar'] = true;
-    //     } else {
-    //         $_SESSION['editar'] = false;
-    //     }
-    //     $this->index();
-    // }
-
-    // public function deletar($params)
-    // {
-    //     $noticia = new Noticia($params[1],"");
-    //     $noticiaDAO = new NoticiaDAO();
-    //     session_start();
-    //     if ($noticiaDAO->excluir($noticia)) {
-    //         $_SESSION['deletar'] = true;
-    //     } else {
-    //         $_SESSION['deletar'] = false;
-    //     }
-    //     $this->index();
-    // }
+    public function editar($params)
+    {
+        $noticia = new Noticia(
+            $params[1],
+            $_POST['titulo'],
+            $_POST['usuario_id'],
+            $_POST['data_noticia'],
+            $_POST['hora'],
+            $_POST['texto'],
+            $_POST['imagem']
+        );
+    
+        $noticiaDAO = new NoticiaDAO();
+        session_start();
+    
+        if ($noticiaDAO->alterar($noticia)) {
+            $_SESSION['editar'] = true;
+        } else {
+            $_SESSION['editar'] = false;
+        }
+    
+        $this->index();
+    }
+    
+ 
+    public function deletar($params)
+    {
+        $noticia = new Noticia($params[1], "", "", "", "", "", "");
+        $noticiaDAO = new NoticiaDAO();
+        session_start();
+        if ($noticiaDAO->excluir($noticia)) {
+            $_SESSION['deletar'] = true;
+        } else {
+            $_SESSION['deletar'] = false;
+        }
+        $this->index();
+    }
+    
 
 
     public function index(){

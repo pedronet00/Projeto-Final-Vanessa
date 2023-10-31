@@ -1,7 +1,7 @@
 <?php
-require '../src/View/cabecalho.php';
+require '../src/View/Header.php';
 ?>
-<h1>Categorias</h1>
+<h1>Notícia</h1>
 <?php
 if (isset($_SESSION['gravar'])) {
     if ($_SESSION['gravar'])
@@ -43,7 +43,7 @@ if (isset($_SESSION['deletar'])) {
     unset($_SESSION['deletar']);
 }
 ?>
-<h1>Categorias Registradas</h1>
+<h1>Notícia Registradas</h1>
 <table class="table table-striped table-hover" id="tabela">
     <thead class="table-light">
         <tr>
@@ -58,11 +58,11 @@ if (isset($_SESSION['deletar'])) {
         ?>
         <tr>
             <th scope="row"><?= $c["id"] ?></th>
-            <td><?= $c["descricao"] ?></td>
+            <td><?= $c["titulo"] ?></td>
             <td>
                 
-                <a href="/categoria/alterar/<?= $c["id"] ?>" class="btn btn-outline-warning">Alterar</a>
-                <a href="/categoria/excluir/<?= $c["id"] ?>" class="btn btn-outline-danger">Excluir</a>
+                <a href="/noticia/alterar/<?= $c["id"] ?>" class="btn btn-outline-warning">Alterar</a>
+                <a href="/noticia/excluir/<?= $c["id"] ?>" class="btn btn-outline-danger">Excluir</a>
             </td>
         </tr>
        
@@ -70,4 +70,4 @@ if (isset($_SESSION['deletar'])) {
     </tbody>
 </table>
 <?php
-require '../src/View/rodape.php';
+require '../src/View/Footer.php';

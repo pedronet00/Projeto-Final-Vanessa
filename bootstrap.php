@@ -8,14 +8,41 @@ $path = $_SERVER['PATH_INFO'] ?? '/';
 $router = new \Php\Empresajrtoledo\Router($method, $path);
 
 
+
+
 $router->get("/noticia/inserir", 
     'Php\Empresajrtoledo\Controller\NoticiaController@inserir'
     
    
 );
 
+$router->get("/noticia/index", 
+    'Php\Empresajrtoledo\Controller\noticiaController@index'
+    
+   
+);
+
+
 $router->post("/noticia/gravar", 'Php\Empresajrtoledo\Controller\NoticiaController@gravar');
 
+
+
+$router->get("/noticia/alterar/{id}", 
+    'Php\Empresajrtoledo\Controller\NoticiaController@alterar'
+    
+   
+);
+
+
+$router->get("/noticia/excluir/{id}", 
+    'Php\Empresajrtoledo\Controller\NoticiaController@excluir'
+    
+   
+);
+
+$router->post("/noticia/deletar/{id}", 'Php\Empresajrtoledo\Controller\NoticiaController@deletar');
+
+$router->post("/noticia/editar/{id}", 'Php\Empresajrtoledo\Controller\NoticiaController@editar');
 
 $resultado = $router->handler();
 
