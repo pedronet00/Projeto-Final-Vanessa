@@ -38,7 +38,7 @@
         }
 
         public function editar($params){
-            $depoimento = new Depoimento($params[1], $_POST['nome'], $_POST['curso'], $_POST['ano_formatura'], $_POST['depoimento']);
+            $depoimento = new Depoimento($params[1], $_POST['nome'], $_POST['curso'], $_POST['ano_conclusao'], $_POST['depoimento']);
             $depoimentoDAO = new DepoimentoDAO();
             session_start();
             if($depoimentoDAO->alterar($depoimento)){

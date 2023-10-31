@@ -1,32 +1,52 @@
 <?php 
 
-   include("../src/View/cabecalho.php");
+   include("../src/View/Header.php");
 
    ?>
    
-   <?php 
-
-    include("../src/View/rodape.php");
-
-   ?>
+   <div class="container">
    <h1>Alterar depoimento</h1>
    
    <form method="post" action="/depoimento/editar/<?=$resultado['id']?>">
         <div class="row">
             <div class="col">
                 <label for="depoimento" class="form-label">
-                    Informe os dados:
+                    Informe o nome:
                 </label>
                 <input type="text" class="form-control" 
-                    name="depoimento" id="depoimento"
-                    value="<?=$resultado['depoimento']?>"/>
+                    name="nome" id="nome"
+                    value="<?=$resultado['nome']?>"/>
+
+                    <label for="depoimento" class="form-label">
+                    Informe o curso:
+                </label>
+                <input type="text" class="form-control" 
+                    name="curso" id="curso"
+                    value="<?=$resultado['curso']?>"/>
+
+                    <label for="depoimento" class="form-label">
+                    Informe o ano de conclusão:
+                </label>
+                <input type="text" class="form-control" 
+                    name="ano_conclusao" id="ano_conclusao"
+                    value="<?=$resultado['ano_formatura']?>"/>
+
+                    <label for="depoimento" class="form-label">
+                    Informe o depoimento:
+                </label>
+                <textarea class="form-control" id="depoimento" name="depoimento" rows="3"></textarea>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <button type="submit" class="btn btn-secondary">
-                    Inserir
+                    salvar alterações
                 </button>
             </div>
         </div>
         </form>
+<?php 
+
+include("../src/View/Footer.php");
+
+?>
