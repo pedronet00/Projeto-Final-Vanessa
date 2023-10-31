@@ -34,7 +34,7 @@ class ProcessoSeletivoMembros {
     }
 
     public function setNome($nome){
-        $this->$nome = $nome;
+        $this->nome = $nome;
     }
 
     public function getNome(){
@@ -42,7 +42,7 @@ class ProcessoSeletivoMembros {
     }
 
     public function setEmail($email){
-        $this->$email = $email;
+        $this->email = $email;
     }
 
     public function getEmail(){
@@ -50,7 +50,7 @@ class ProcessoSeletivoMembros {
     }
 
     public function setTelefone($telefone){
-        $this->$telefone = $telefone;
+        $this->telefone = $telefone;
     }
 
     public function getTelefone(){
@@ -58,7 +58,7 @@ class ProcessoSeletivoMembros {
     }
 
     public function setCurso($curso){
-        $this->$curso = $curso;
+        $this->curso = $curso;
     }
 
     public function getCurso(){
@@ -66,7 +66,7 @@ class ProcessoSeletivoMembros {
     }
 
     public function setTermo($termo){
-        $this->$termo = $termo;
+        $this->termo = $termo;
     }
 
     public function getTermo(){
@@ -74,7 +74,7 @@ class ProcessoSeletivoMembros {
     }
 
     public function setRa($ra){
-        $this->$ra = $ra;
+        $this->ra = $ra;
     }
 
     public function getRa(){

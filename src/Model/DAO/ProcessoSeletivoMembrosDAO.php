@@ -26,6 +26,7 @@ class ProcessoSeletivoMembrosDAO{
             $ps->bindValue(":ra", $membros->getRa());
             return $ps->execute();
         } catch(Exception $e){
+            echo $e;
             return 0;
         }
     }
@@ -43,6 +44,7 @@ class ProcessoSeletivoMembrosDAO{
             $ps->bindValue(":id", $membros->getId());
             return $ps->execute();
         } catch(Exception $e){
+            echo $e;
             return 0;
         }
     }
