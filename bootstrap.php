@@ -7,6 +7,10 @@ $path = $_SERVER['PATH_INFO'] ?? '/';
 
 $router = new \Php\Empresajrtoledo\Router($method, $path);
 
+$router->get("/Parceiro/parceiro",
+    'Php\Empresajrtoledo\Controller\ParceiroController@parceiro'
+);
+
 $router->get("/Parceiro/index",
     'Php\Empresajrtoledo\Controller\ParceiroController@index'
 );
@@ -31,8 +35,8 @@ $router->post("/Parceiro/deletar/{id}",
     'Php\Empresajrtoledo\Controller\ParceiroController@deletar'
 );
 
-$router->post("/Parceiro/alterar",
-    'Php\Empresajrtoledo\Controller\ParceiroController@alterar'
+$router->post("/Parceiro/editar/{id}",
+    'Php\Empresajrtoledo\Controller\ParceiroController@editar'
 );
 
 $resultado = $router->handler();

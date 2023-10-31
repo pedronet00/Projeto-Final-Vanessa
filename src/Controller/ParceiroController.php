@@ -8,6 +8,11 @@ use Php\Empresajrtoledo\Model\DAO\ParceiroDAO;
 class ParceiroController
 {   
     //HTTP GET
+    public function parceiro() {
+        require '../src/View/Parceiro/parceiro.php';
+    }
+
+    //HTTP GET
     public function inserir() {
         require '../src/View/Parceiro/inserir.php';
     }

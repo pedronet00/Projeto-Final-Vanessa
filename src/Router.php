@@ -1,12 +1,9 @@
 <?php
 
-
 namespace Php\Empresajrtoledo;
-
 
 class Router
 {
-
     private $routes = [];
     private $method;
     private $path;
@@ -73,5 +70,4 @@ class Router
 
         return $result;
     }
-
 }

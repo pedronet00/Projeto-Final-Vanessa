@@ -35,6 +35,7 @@ class ParceiroDAO{
             $ps->bindValue(":nome", $Parceiro->getNome());            
             $ps->bindValue(":id", $Parceiro->getId());            
             $ps->bindValue(":imagem", $Parceiro->getImagem());
+            $ps->bindValue(":descricao", $Parceiro->getDescricao());
             return $ps->execute();
         } catch(Exception $e){
             return 0;

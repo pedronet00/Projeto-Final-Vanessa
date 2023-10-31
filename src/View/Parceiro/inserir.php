@@ -1,13 +1,40 @@
-    <div class="formulario" style="width: 50%; margin: 5% auto;">
-    
-    <form method="post" action="/parceiro/gravar">
-    <div class="mb-3">
-        <label for="formTitle" class="form-label">Título</label>
-        <input type="text" class="form-control" id="formTitle" placeholder="Insira aqui o título">
+<?php
+    require '../src/View/Header.php';
+?>
+
+<div class="container mt-5">
+
+    <form method="post" action="/Parceiro/gravar">
+
+    <div class="row">
+      <div class="col">
+          <label for="nome" class="form-label">Informe o Nome do Parceiro: </label>
+          <input type="text" name="nome" id="nome" class="form-control" required/> 
+      </div>
     </div>
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Texto</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+    <div class="row">
+      <div class="col">
+          <label for="descricao" class="form-label">Informe a descrição do Parceiro: </label>
+          <input type="text" name="descricao" id="descricao" class="form-control" required/> 
+      </div>
     </div>
+
+    <div class="row">
+      <div class="col">
+          <label for="imagem" class="form-label">Insira a imagem do Parceiro: </label>
+          <input type="text" name="imagem" id="imagem" class="form-control" required/> 
+      </div>
+    </div>
+
+    <div class="row"> 
+        <div class="col">
+            <button type="submit" class="btn btn-secondary">Gravar</button>
+        </div>
+    </div>
+
     </form>
 </div>
+
+<?php
+    require '../src/View/Footer.php';
