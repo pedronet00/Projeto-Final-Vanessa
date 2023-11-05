@@ -4,7 +4,7 @@ require '../src/View/Header.php';
 
 <div class="container">
 <h1>Nova Notícia</h1>
-    <form method="post" action="/noticia/gravar">
+    <form method="post" enctype="multipart/form-data" action="/noticia/gravar">
     <input type="hidden" class="form-control" name="usuario_id" id="usuario_id" value="1" />
         <div class="row">
             <div class="col">
@@ -44,7 +44,7 @@ require '../src/View/Header.php';
                 <label for="imagem" class="form-label">
                     Selecione a imagem:
                 </label>
-                <input type="text" class="form-control" name="imagem" id="imagem" require/>
+                <input type="file" class="form-control" name="imagem" id="imagem" require/>
             </div>
         </div>
         <div class="row">
