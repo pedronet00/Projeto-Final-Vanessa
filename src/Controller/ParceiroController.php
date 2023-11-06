@@ -62,10 +62,13 @@ class ParceiroController
     }
 
     public function deletar($params){
-        $parceiro = new Parceiro($params[1], "", "", "");
+        $id = $params[1];
         $parceiroDAO = new ParceiroDAO();
+        $resultado = $parceiroDAO->consultarPorId($id);
+        $parceiro = new Parceiro($params[1], "", "", "");
         session_start();
         if ($parceiroDAO->excluir($parceiro)){
+            unlink($resultado['imagem']);
             $_SESSION['deletar'] = true;
         }else {
             $_SESSION['deletar'] = false;

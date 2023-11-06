@@ -10,21 +10,20 @@
         <div class="row">
             <div class="col">
                 <label for="nome" class="form-label">Informe o nome do Parceiro: </label>
-                <input type="text" class="form-control" name="nome" id="nome" value="<?=$resultado['nome']?>"/>
+                <input type="text" class="form-control" name="nome" id="nome" value="<?=$resultado['nome']?>" disabled/>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
                 <label for="descricao" class="form-label">Informe a descrição do Parceiro: </label>
-                <input type="text" class="form-control" name="descricao" id="descricao" value="<?=$resultado['descricao']?>"/>
+                <input type="text" class="form-control" name="descricao" id="descricao" value="<?=$resultado['descricao']?>" disabled/>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <label for="imagem" class="form-label">Insira a imagem: </label>
-                <input type="file" class="form-control" name="imagem" id="image" value="<?=$resultado['imagem']?>"/>
+                <img src="/<?=$resultado['imagem']?>"/>
             </div>
         </div>        
 

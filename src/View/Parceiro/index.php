@@ -24,9 +24,9 @@
                     <th><?= $c["id"] ?></th>
                     <td><?= $c["nome"] ?></td>
                     <td><?= $c["descricao"] ?></td>
-                    <td><?= $c["imagem"] ?></td>
+                    <td><img src="/<?=$c['imagem']?>" height="60" width="60"/></td>
                     <td>
-                        <a href="/Parceiro/alterar/<?= $c["id"] ?>" class="btn btn-outline-warning">Alterar</a>
+                        <!--<a href="/Parceiro/alterar/<?= $c["id"] ?>" class="btn btn-outline-warning">Alterar</a>-->
                         <a href="/Parceiro/excluir/<?= $c["id"] ?>" class="btn btn-outline-danger">Excluir</a>
                     </td>
                 </tr>
