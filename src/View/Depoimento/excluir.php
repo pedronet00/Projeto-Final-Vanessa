@@ -29,7 +29,7 @@ include("../src/View/Header.php");
                 <label for="depoimento" class="form-label">
                     Informe o depoimento:
                 </label>
-                <textarea class="form-control" id="depoimento" name="depoimento" rows="3" disabled></textarea>
+                <textarea class="form-control" id="depoimento" name="depoimento" rows="3" disabled><?= $resultado['depoimento'] ?></textarea>
             </div>
         </div>
         <div class="row">

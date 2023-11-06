@@ -34,17 +34,18 @@
                     <label for="depoimento" class="form-label">
                     Informe o depoimento:
                 </label>
-                <textarea class="form-control" id="depoimento" name="depoimento" rows="3"></textarea>
+                <textarea class="form-control" id="depoimento" name="depoimento" rows="3"><?=$resultado['depoimento']?></textarea>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <button type="submit" class="btn btn-secondary">
-                    salvar alterações
+                <button type="submit" class="btn btn-secondary mt-3 mb-3">
+                    Salvar Alterações
                 </button>
             </div>
         </div>
-        </form>
+    </form>
+</div>
 <?php 
 
 include("../src/View/Footer.php");
