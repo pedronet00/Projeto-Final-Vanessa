@@ -11,6 +11,10 @@ class ProcessoSeletivoMembrosController{
         require '../src/View/ProcessoSeletivoMembros/inserir.php';
     }
 
+    public function novoMembroFormulario(){
+        require '../src/View/ProcessoSeletivoMembros/candidato_membros.php';
+    }
+
     public function alterar($params){
         $membrosDAO = new ProcessoSeletivoMembrosDAO();
         $id = $params[1];
@@ -20,7 +24,7 @@ class ProcessoSeletivoMembrosController{
 
     public function excluir($params){
         $membrosDAO = new ProcessoSeletivoMembrosDAO();
-        $id = $params[1];
+        $id = $params[1];//tinha um 0
         $resultado = $membrosDAO->consultarPorId($id);
         require '../src/View/ProcessoSeletivoMembros/excluir.php';
     }
@@ -36,6 +40,18 @@ class ProcessoSeletivoMembrosController{
             $_SESSION['gravar'] = false;
         }
         $this->index();
+    }
+
+    public function novoMembro(){
+        $membros = new ProcessoSeletivoMembros('', $_POST['nome'], $_POST['email'], $_POST['telefone'], $_POST['curso'], 
+        $_POST['termo'], $_POST['ra']);
+        $membrosDAO = new ProcessoSeletivoMembrosDAO();
+        if ($membrosDAO->inserir($membros)){
+            $_SESSION['gravar'] = true;
+        } else {
+            $_SESSION['gravar'] = false;
+        }
+        require '../src/View/ProcessoSeletivoMembros/candidato_membros_resposta.php';
     }
 
     public function editar($params){

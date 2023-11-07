@@ -16,6 +16,10 @@ $router->get("/ProcessoSeletivoMembros/inserir",
     'Php\Empresajrtoledo\Controller\ProcessoSeletivoMembrosController@inserir'
 );
 
+$router->get("/ProcessoSeletivoMembros/novoMembroFormulario", 
+    'Php\Empresajrtoledo\Controller\ProcessoSeletivoMembrosController@novoMembroFormulario'
+);
+
 $router->get("/ProcessoSeletivoMembros/alterar/{id}", 
     'Php\Empresajrtoledo\Controller\ProcessoSeletivoMembrosController@alterar'
 );
@@ -33,6 +37,9 @@ $router->post("/ProcessoSeletivoMembros/editar/{id}",
 
 $router->post("/ProcessoSeletivoMembros/deletar/{id}",
     'Php\Empresajrtoledo\Controller\ProcessoSeletivoMembrosController@deletar');
+
+$router->post("/ProcessoSeletivoMembros/novoMembro",
+'Php\Empresajrtoledo\Controller\ProcessoSeletivoMembrosController@novoMembro');
 
 $resultado = $router->handler();
 

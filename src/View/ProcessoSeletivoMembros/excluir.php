@@ -1,8 +1,9 @@
 <?php
     require '../src/View/Home/Header.php';
 ?>
-        <h1>Excluir Processo Seletivo Membro</h1>
-        <div class="container">
+<div class="container">
+        <h1 class="mt-3">Excluir Processo Seletivo Membro</h1>
+        
         <form method="post" action="/ProcessoSeletivoMembros/deletar/<?=$resultado['id']?>">
         <div class="row">
             <div class="col">
@@ -69,12 +70,12 @@
                 <h5 class="text-danger">
                     Deseja realmente excluir o registro?
                 </h5>
-                <button type="submit" class="btn btn-danger">
+                <button type="submit" class="btn btn-danger mt-5 mb-4">
                     Excluir
                 </button>
             </div>
         </div>
-        <div>
         </form>
+        </div>
 <?php
     require '../src/View/Home/Footer.php';

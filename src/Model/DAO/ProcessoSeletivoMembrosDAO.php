@@ -80,6 +80,4 @@ class ProcessoSeletivoMembrosDAO{
             return 0;
         }
     }
-
-
 }

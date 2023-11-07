@@ -1,9 +1,9 @@
 <?php
     require '../src/View/Home/Header.php';
-?>
-        <h1 class="mt-4">Adicionar novo membro</h1>
-        <div class="container">
-        <form method="post" action="/ProcessoSeletivoMembros/gravar">
+?><div class="container">
+        <h1 class="mt-3">Nova candidatura - Membro</h1>
+        
+        <form method="post" action="/ProcessoSeletivoMembros/novoMembro">
         <div class="row">
             <div class="col">
                 <label for="nome" class="form-label">

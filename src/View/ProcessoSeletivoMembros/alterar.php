@@ -1,7 +1,7 @@
 <?php
     require '../src/View/Home/Header.php';
 ?>
-        <h1>Alterar Processo Seletivo do Membro</h1>
+        <h1 class="mt-4">Alterar dados no processo seletivo</h1>
         <div class="container">
         <form method="post" action="/ProcessoSeletivoMembros/editar/<?=$resultado['id']?>">
         <div class="row">
@@ -66,12 +66,13 @@
         </div>
         <div class="row mt-3">
             <div class="col">
-                <button type="submit" class="btn btn-secondary">
+                <button type="submit" class="btn btn-secondary mt-5 mb-5">
                     Editar
                 </button>
             </div>
         </div> 
         </div> 
         </form>
+
 <?php
     require '../src/View/Home/Footer.php';  
