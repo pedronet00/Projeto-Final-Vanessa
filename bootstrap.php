@@ -35,6 +35,34 @@ $router->post("/depoimento/deletar/{id}",
     'Php\Empresajrtoledo\Controller\DepoimentoController@deletar'
 );
 
+$router->get("/noticia/inserir",
+    'Php\Empresajrtoledo\Controller\NoticiaController@inserir'
+);
+
+$router->post("/noticia/gravar",
+    'Php\Empresajrtoledo\Controller\NoticiaController@gravar'
+);
+
+$router->get("/noticia/index",
+    'Php\Empresajrtoledo\Controller\NoticiaController@index'
+);
+
+$router->get("/noticial/alterar/{id}",
+    'Php\Empresajrtoledo\Controller\NoticiaController@alterar'
+);
+
+$router->get("/noticia/excluir/{id}",
+    'Php\Empresajrtoledo\Controller\NoticiaController@excluir'
+);
+
+$router->post("/noticia/editar/{id}",
+    'Php\Empresajrtoledo\Controller\NoticiaController@editar'
+);
+
+$router->post("/depoimento/deletar/{id}",
+    'Php\Empresajrtoledo\Controller\DepoimentoController@deletar'
+);
+
 $router->get("/Parceiro/parceiro",
     'Php\Empresajrtoledo\Controller\ParceiroController@parceiro'
 );
