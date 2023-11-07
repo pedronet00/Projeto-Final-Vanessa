@@ -25,15 +25,25 @@ class NoticiaDAO{
             $ps->bindValue(":hora", $noticia->getHora());
             $ps->bindValue(":texto", $noticia->getTexto());
             $ps->bindValue(":imagem", $noticia->getImagem());
-            return $ps->execute();
+           
+           return $ps->execute();
         } catch(Exception $e){
+            echo $e;
             return 0;
         }
     }
 
     public function alterar(Noticia $noticia){
-        try{
-            $sql = "UPDATE noticia SET titulo = :titulo, usuario_id = :usuario_id, data_noticia = :data_noticia, hora = :hora, texto = :texto, imagem = :imagem WHERE id = :id";
+        try {
+            $sql = "UPDATE noticia SET 
+                    titulo = :titulo,
+                    usuario_id = :usuario_id,
+                    data_noticia = :data_noticia,
+                    hora = :hora,
+                    texto = :texto,
+                    imagem = :imagem
+                    WHERE id = :id";
+                    
             $ps = $this->dao->getConexao()->prepare($sql);
             $ps->bindValue(":titulo", $noticia->getTitulo());
             $ps->bindValue(":usuario_id", $noticia->getUsuario_id());
@@ -43,10 +53,12 @@ class NoticiaDAO{
             $ps->bindValue(":imagem", $noticia->getImagem());
             $ps->bindValue(":id", $noticia->getId());
             return $ps->execute();
-        } catch(Exception $e){
+        } catch(Exception  $e) {
             return 0;
         }
     }
+    
+
     
     public function excluir(Noticia $noticia){
         try{
