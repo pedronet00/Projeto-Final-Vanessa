@@ -49,7 +49,7 @@ require '../src/View/Header.php';
         </div>
         <div class="row">
             <div class="col">
-                <button type="submit" class="btn btn-secondary mt-3 mb-3">
+                <button type="submit" class="btn btn-secondary">
                     Inserir
                 </button>
             </div>

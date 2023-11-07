@@ -36,8 +36,8 @@
     </div>
     <div class="row">
       <div class="col">
-        
-        <img src="/<?= $resultado['imagem'] ?>" />
+        <label for="imagem" class="form-label">URL da Imagem:</label>
+        <input type="text" class="form-control" name="imagem" id="imagem" value="<?= $resultado['imagem'] ?>" disabled>
       </div>
     </div>
     <div class="row">

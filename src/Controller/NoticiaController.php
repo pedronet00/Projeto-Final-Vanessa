@@ -14,7 +14,6 @@ class NoticiaController
     {
         require '../src/View/Noticia/inserir.php';
     }
-
     public function alterar($params)
     {
         $noticiaDAO = new NoticiaDAO();
@@ -22,7 +21,6 @@ class NoticiaController
         $resultado = $noticiaDAO->consultarPorId($id);
         require '../src/View/Noticia/alterar.php';
     }
-
     public function excluir($params)
     {
         $noticiaDAO = new NoticiaDAO();
@@ -33,29 +31,25 @@ class NoticiaController
 
     public function gravar()
     {
-        session_start();
-        $dir = "noticias/";
-        $upload_file = $dir . basename($_FILES['imagem']['name']);
-        if (move_uploaded_file($_FILES["imagem"]["tmp_name"], $upload_file)) {
-            $titulo = $_POST['titulo'] ?? '';
-            $usuario_id = $_POST['usuario_id'] ?? '';
-            $hora = $_POST['hora'] ?? '';
-            $texto = $_POST['texto'] ?? '';
-            $imagem = $upload_file ?? '';
-            $data_noticia = $_POST['data_noticia'] ?? '';
-            $noticia = new Noticia('', $titulo, $usuario_id, $data_noticia, $hora, $texto, $imagem);
-            $noticiaDAO = new NoticiaDAO();
-            if ($noticiaDAO->inserir($noticia)) {
-                $_SESSION['gravar'] = true;
-            } else {
-                $_SESSION['gravar'] = false;
-            }
-            $_SESSION['arquivo'] = true;
-            $this->index();
+        $titulo = $_POST['titulo'] ?? ''; 
+        $usuario_id = $_POST['usuario_id'] ?? ''; 
+        $hora = $_POST['hora'] ?? ''; 
+        $texto = $_POST['texto'] ?? ''; 
+        $imagem = $_POST['imagem'] ?? ''; 
+        $data_noticia = $_POST['data_noticia'] ?? ''; 
+    
+        $noticia = new Noticia('', $titulo, $usuario_id, $data_noticia, $hora, $texto, $imagem); 
+        $noticiaDAO = new NoticiaDAO();
+         session_start();
+        if ($noticiaDAO->inserir($noticia)) {
+            $_SESSION['gravar'] = true;
         } else {
-            $_SESSION['arquivo'] = false;
+            $_SESSION['gravar'] = false;
         }
+        $this->index();
     }
+    
+
 
     public function editar($params)
     {
@@ -68,37 +62,36 @@ class NoticiaController
             $_POST['texto'],
             $_POST['imagem']
         );
-
+    
         $noticiaDAO = new NoticiaDAO();
         session_start();
-
+    
         if ($noticiaDAO->alterar($noticia)) {
             $_SESSION['editar'] = true;
         } else {
             $_SESSION['editar'] = false;
         }
-
+    
         $this->index();
     }
-
+    
+ 
     public function deletar($params)
     {
-        $id = $params[1];
-        $NoticiaDAO = new NoticiaDAO();
-        $resultado = $NoticiaDAO->consultarPorId($id);
         $noticia = new Noticia($params[1], "", "", "", "", "", "");
+        $noticiaDAO = new NoticiaDAO();
         session_start();
-        if ($NoticiaDAO->excluir($noticia)) {
-            unlink($resultado['imagem']);
+        if ($noticiaDAO->excluir($noticia)) {
             $_SESSION['deletar'] = true;
         } else {
             $_SESSION['deletar'] = false;
         }
         $this->index();
     }
+    
 
-    public function index()
-    {
+
+    public function index(){
         $noticiaDAO = new NoticiaDAO();
         $resultado = $noticiaDAO->consultar();
         require '../src/View/Noticia/index.php';

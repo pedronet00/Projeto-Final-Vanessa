@@ -45,15 +45,6 @@ require '../src/View/Header.php';
       </div>';
         unset($_SESSION['deletar']);
     }
-    if (isset($_SESSION['arquivo'])) {
-        if ($_SESSION['arquivo'] == false) {
-            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    Erro ao fazer o upload do arquivo!
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>';
-            unset($_SESSION['deletar']);
-        }
-    }
     ?>
     <div class="row">
         <div class="col">
@@ -79,7 +70,7 @@ require '../src/View/Header.php';
                     <td><?= $c["titulo"] ?></td>
                     <td>
 
-                        <!--<a href="/noticia/alterar/<?= $c["id"] ?>" class="btn btn-outline-warning">Alterar</a>-->
+                        <a href="/noticia/alterar/<?= $c["id"] ?>" class="btn btn-outline-warning">Alterar</a>
                         <a href="/noticia/excluir/<?= $c["id"] ?>" class="btn btn-outline-danger">Excluir</a>
                     </td>
                 </tr>
