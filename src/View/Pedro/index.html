@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form : Criação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        *{
+            border: none;
+        }
+
+        h2{
+            color: white;
+            font-size: 82px;
+        }
+
+        .faca_parte{
+            background-color: #E8925E;
+            color: #152944;
+            padding: 2%;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 25px;
+            border-radius: 10px;
+        }
+
+        .faca_parte:hover{
+            color: white;
+        }
+
+        
+    </style>
+</head>
+<body style="background-color: #152944;">
+
+  <nav class="navbar navbar-expand-lg" style="background-color: #152944;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: white; font-size: 25px;">Empresa<span style="color: #E8925E; font-weight: bold;">Jr</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: flex-end!important;">
+        <ul class="navbar-nav ml-auto"> <!-- Adicione ml-auto aqui para alinhar à direita -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color: white;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color: white;">Quem Somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color: white;">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="membros.html" style="color: white;">Membros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color: white;">Processo Seletivo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color: white;">Clientes e Parceiros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="color: white;">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      <div class="container" style="margin-left: 13%; height: 80vh; overflow-x: hidden;">
+        <div class="row" style="align-items: center; margin-top: 5%;">
+          <div class="col" data-aos="fade-right" data-aos-duration="2000">
+            <h2>A sua vaga está<br/><span style="color: #E8925E; font-weight: bold;">te esperando!</span></h2>
+            <br/>
+            <p style="color: white; font-size: 20px;">Encontre a vaga perfeita para aprimorar seus conhecimentos!</p>
+            <br/>
+            <a href="#" class="faca_parte">Faça parte</a>
+          </div>
+          <div class="col" data-aos="fade-left" data-aos-duration="2000">
+            <img src="vector.png" width="450px" height="450px">
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3" id="quem-sou" style="width: 90%; margin: auto; background-color: #152944; color: white; display: flex; justify-content: center; border: none;">
+        <div class="row g-0" style="display: flex; align-items: center;">
+          <div class="col-md-4" data-aos="fade-right" data-aos-duration="2000">
+            <img src="ej-equipe.jpg" class="img-fluid rounded-start pulse-image" alt="...">
+          </div>
+          <div class="col-md-8" data-aos="fade-right" data-aos-duration="2000">
+            <div class="card-body">
+              <h2 class="card-title" id="sobre_mim" style="color: #E8925E; text-align: center; width: 80%; margin: auto; font-size: 48px;">Nossa história 🌱</h2>
+              <br/>
+              <p class="card-text" id="sobre_mim_1" style="text-align: center; width: 80%; margin: auto;"> Fundada em 1993, a Empresa Júnior Toledo é um núcleo de prática profissional 
+                da área de negócios. Ela é constituída e gerida exclusivamente pelos alunos 
+                dos cursos de graduação da Toledo Prudente, sob a orientação e supervisão 
+                de seus professores.</p>
+              <br/>
+              <p class="card-text" id="sobre_mim_2" style="text-align: center; width: 80%; margin: auto;">Ajudamos nossos seus alunos e clientes a <span style="color: #E8925E;">obterem sucesso</span> 
+                nos negócios e na vida profissional.</p>
+              <br/>
+              <p class="card-text" id="sobre_mim_3" style="text-align: center; width: 80%; margin: auto;">Por meio de projetos de consultoria empresarial, ações sociais e eventos, 
+                contribuimos com o desenvolvimento econômico, social, e cultural dos
+                alunos, das organizações e da comunidade de Presidente Prudente e região.</p>
+              <br/>
+            </div>
+          </div>
+        </div>  
+      </div> 
+
+      <div class="servicos_oferecidos" id="servicos-oferecidos" style="width: 100%; margin: auto; background-color: white; text-align: center; overflow: hidden;">
+        <br/><br/><br/>
+        <h2 id="servicos_oferecidos" style="color: #152944; font-size: 48px;">Missão, Visão e Valores</h2>
+        <br/><br/>
+        <div class="servicos row">
+          <div class="card col-md-4 col-sm-12 servicos-container" data-aos="fade-up" data-aos-duration="1000" style="border: none; align-items: center;">
+            <img src="alvo.webp" class="card-img-top" alt="..." style="width: 200px; height: 200px;">
+            <br/>
+            <div class="card-body">
+              <h5 class="card-title topicos-servicos" id="servicos_desenvolvimento_titulo">Missão</h5>
+              <p class="card-text servicos-texto" id="servicos_desenvolvimento_texto">Transformar alunos e empresas em casos de sucesso.</p>
+            </div>
+          </div>
+      
+          <div class="card col-md-4 col-sm-12 servicos-container" data-aos="fade-up" data-aos-duration="2000" style="border: none; align-items: center;">
+            <img src="telescopio.png" class="card-img-top img-servicos" alt="..." style="width: 200px; height: 200px;">
+            <br/>
+            <div class="card-body">
+              <h5 class="card-title topicos-servicos" id="servicos_prototipacao_titulo">Visão</h5>
+              <p class="card-text servicos-texto" id="servicos_prototipacao_texto">Ser a experiência profissional mais desejada pelos alunos da Toledo Prudente.</p>
+            </div>
+          </div>
+      
+          <div class="card col-md-4 col-sm-12 servicos-container" data-aos="fade-up" data-aos-duration="3000" style="border: none; align-items: center;">
+            <img src="estrela.png" class="card-img-top img-servicos" alt="..." style="width: 200px; height: 200px;">
+            <br/>
+            <div class="card-body">
+              <h5 class="card-title topicos-servicos" id="servicos_copywriting_titulo">Valores</h5>
+              <p class="card-text servicos-texto" id="servicos_copywriting_texto">Ética | Meritocracia | Paixão | Responsabilidade Social | Engajamento | Solidariedade | Atitude</p>
+            </div>
+          </div>
+         
+          <p style="margin-top: 5%;">Fazemos tudo isso para  Pessoas Físicas, Empresas, Órgãos Públicos, Entidades Sociais e a Comunidade, no geral.</p>
+        </div>
+
+          <h2 style="color: #152944; font-size: 48px; margin-top: 5%;">Nossos Clientes</h2>
+
+          <div id="carouselExample" class="carousel slide" style="width: 60%; margin-left: auto; margin-right: auto; margin-top: 5%;">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/af58c24f32e7f89b180d.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/cfee74a21d86fd0548d2.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/c57a737ad710c0b3f04f.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/cbd5646264e4ad6bb94a.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/69242f8cdf458cfda06e.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/a3163133fc8f888605df.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/dc998bcf9c837523c9c1.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/10488aa0ef62ec195cb5.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/5568398c9e0e1b4badaf.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/516fd12ecc57c5f11658.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/277c162b8f3ef88ea3f3.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/a19445397cacb3de23e5.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/dccfd6a66ab3ad075063.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/b5b0963224a0830b9a78.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/9c17605b2d9a8373f053.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/5782b527720d97ee5132.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/3a76405b6c3d1d4957f7.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/b29dc0c7a9afd96f851b.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/94d769f7589472467abf.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/83a7b784e733f9eed632.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/a9e437f3a51e6a696e26.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>  
+
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/9c78850952a3db167249.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/c451bd6646aa4cd60e97.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/6464bc2f99a19ac7834d.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>  
+
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/144145f70dcdfa7635cd.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/3e437a8dc7836d591014.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/dec2a79ac4111a684a73.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>  
+
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/b8d2cf2601c8238b67df.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/6db30bfa8065386484fb.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/b18e25897381392303e8.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/01276f1e67a9643d2a9d.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/7b1e45922dd2e15121c0.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/547e5ffdc7f28e80991c.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>  
+
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/58ae2188c24fb49b1ebf.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/40e43f64b35187ecef13.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/980038f8ef58de1c13f8.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>  
+
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/c199e8299e3faab319b1.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              <div class="carousel-item">
+                <img src="http://www.empresajrtoledo.com.br/arquivos/imagens/clientes_parceiros/b3648153001e79a7ef19.jpg" class="d-block" alt="..." style="width: 300px; height: 200px; margin: auto;">
+              </div>
+              
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: #152944!important;"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: #152944!important;"></span>
+            </button>
+          </div>
+          
+          
+
+          <div class="inscricao" style="width: 100vw; height: 100vh; margin-top: 10%; background-color: #152944; color: white;">
+            <div class="container" style="height: 80vh;">
+              <br/>
+              <h2>Como <span style="color: #E8925E; font-weight: bold;">participar?</span></h2>
+              <p style="margin-top: 1%;">Para participar, é necessário ser aprovado em um processo seletivo. Todos os alunos que estiverem 
+                matriculados nos cursos de graduação da Toledo Prudente Centro Universitário.</p>
+              <div class="row" style=" margin-top: 5%;">
+                <div class="col" data-aos="fade-right" data-aos-duration="2000">
+                  <img src="subscribe.png" width="450px" height="450px">
+                </div>
+                <div class="col" data-aos="fade-left" data-aos-duration="2000">
+                  
+                  <form>
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row mb-4">
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="form6Example3">Nome completo</label>
+                        <input type="text" id="form6Example3" class="form-control" />
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <label class="form-label" for="form6Example1">Telefone</label>
+                          <input type="number" id="form6Example1" class="form-control" />
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <label class="form-label" for="form6Example2">E-mail</label>
+                          <input type="email" id="form6Example2" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-4">
+                      
+                      <div class="col">
+                        <div class="form-outline mb-4">
+                          <label class="form-label" for="form6Example4">Curso</label>
+                          <select class="form-control">
+                            <option>Escolha seu curso:</option>
+                            <option>Administração</option>
+                            <option>Sistemas de Informação</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-outline">
+                          <label class="form-label" for="form6Example2">R.A</label>
+                          <input type="text" id="form6Example2" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+                  
+                  
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary" style="background-color: #E8925E; color: #152944; border: none; font-weight: bold; width: 150px; height: 40px;">Enviar</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+<footer class="text-center text-lg-start" style="background-color: #152944; color: white; ">
+  <section class="d-flex justify-content-center justify-content-lg-between p-4">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Empresa<span style="color:#E8925E;">JR</span>
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <p style="color: #E8925E;">
+            <a href="#!" style="text-decoration: none; font-size: 22px;" class="text-reset">Menus</a>
+          </p>
+          <p>
+            <a href="#!" style="text-decoration: none;" class="text-reset">Home</a>
+          </p>
+          <p>
+            <a href="#!" style="text-decoration: none;" class="text-reset">Quem Somos</a>
+          </p>
+          <p>
+            <a href="#!" style="text-decoration: none;" class="text-reset">Membros</a>
+          </p>
+          <p>
+            <a href="#!" style="text-decoration: none;" class="text-reset">Processo Seletivo</a>
+          </p>
+          <p>
+            <a href="#!" style="text-decoration: none;" class="text-reset">Clientes e Parceiros</a>
+          </p>
+          <p>
+            <a href="#!" style="text-decoration: none;" class="text-reset">Contato</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" >
+          <p style="color: #E8925E;">
+            <a href="#!" style="text-decoration: none; font-size: 22px;" class="text-reset">Atendimento</a>
+          </p>
+          <!-- Links -->
+          <p>Segunda à Sexta-feira, das 13h às 19h</p>
+          <p>Tel | +55 18 3901-4003</p>
+          <p>empresajr@toledoprudente.edu.br</p>
+          <p>Rua Alvino Gomes Texeira, 340, Vila Furquim CEP: 19030-440 - Presidente Prudente, SP</p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+
+
+
+
+
+
+
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+
+    var multipleCardCarousel = document.querySelector(
+    "#carouselExampleControls"
+    );
+    if (window.matchMedia("(min-width: 768px)").matches) {
+    var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+        interval: false,
+    });
+    var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+    var cardWidth = $(".carousel-item").width();
+    var scrollPosition = 0;
+    $("#carouselExampleControls .carousel-control-next").on("click", function () {
+        if (scrollPosition < carouselWidth - cardWidth * 4) {
+        scrollPosition += cardWidth;
+        $("#carouselExampleControls .carousel-inner").animate(
+            { scrollLeft: scrollPosition },
+            600
+        );
+        }
+    });
+    $("#carouselExampleControls .carousel-control-prev").on("click", function () {
+        if (scrollPosition > 0) {
+        scrollPosition -= cardWidth;
+        $("#carouselExampleControls .carousel-inner").animate(
+            { scrollLeft: scrollPosition },
+            600
+        );
+        }
+    });
+    } else {
+    $(multipleCardCarousel).addClass("slide");
+    }
+      </script>
+      
+      <script>
+        AOS.init();
+      </script>
+
+    
+</body>
+</html>
