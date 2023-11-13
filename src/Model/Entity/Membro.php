@@ -14,9 +14,9 @@ class Membro{
     public function __construct($id, $Nome, $Curso, $Cargo, $Foto)
     {
         $this->setId($id);
-        $this->setNome(($Nome)); 
+        $this->setNome($Nome); 
         $this->setCurso($Curso);
-        $this->setCargo(($Cargo)); 
+        $this->setCargo($Cargo); 
         $this->setFoto($Foto);
     }
     public function setId($id){
@@ -39,10 +39,6 @@ class Membro{
 
     public function getId(){
         return $this->id;
-    }
-
-    public function getDescricao(){
-        return $this->descricao;
     }
     public function getNome(){
         return $this->Nome;

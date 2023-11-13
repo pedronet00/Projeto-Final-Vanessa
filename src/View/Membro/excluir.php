@@ -1,18 +1,51 @@
-<div class="formulario" style="width: 50%; margin: 5% auto;">
-    <div class="mb-3">
-        <label for="formName" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="formName" placeholder="Insira o nome">
-    </div>
-    <div class="mb-3">
-        <label for="formCurso" class="form-label">Curso</label>
-        <input type="text" class="form-control" id="formCurso" placeholder="Insira o curso">
-    </div>
-    <div class="mb-3">
-        <label for="formCargo" class="form-label">Cargo</label>
-        <input type="text" class="form-control" id="formCargo" placeholder="Insira o cargo">
-    </div>
-    <div class="mb-3">
-        <label for="formFoto" class="form-label">Foto</label>
-        <input type="file" class="form-control-file" id="formFoto">
-    </div>
+<?php
+    //require '../src/View/Header.php';
+?>
+
+<div class="container mt-5">
+
+    <h1>Excluir Membro</h1>
+    <form method="post" action="/Membro/deletar/<?=$resultado['id']?>">
+        
+        <div class="row">
+            <div class="col">
+                <label for="nome" class="form-label">Informe o Nome: </label>
+                <input type="text" class="form-control" name="nome" id="nome" value="<?=$resultado['nome']?>" disabled/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="curso" class="form-label">Informe o Curso: </label>
+                <input type="text" class="form-control" name="curso" id="curso" value="<?=$resultado['curso']?>" disabled/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="cargo" class="form-label">Informe o Cargo: </label>
+                <input type="text" class="form-control" name="cargo" id="cargo" value="<?=$resultado['cargo']?>" disabled/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img src="/<?=$resultado['imagem']?>"/>
+            </div>
+        </div>        
+
+        <div class="row">
+            <div class="col">
+                <h5 class="text-danger">Deseja realmente excluir o registro?</h5>
+
+                <button type="submit" class="btn btn-danger">
+                    Excluir
+                </button>
+            </div>
+        </div>
+        
+    </form>
 </div>
+
+<?php
+//require '../src/View/Footer.php';

@@ -17,7 +17,7 @@ class MembroDAO{
 
     public function inserir(Membro $membro){
         try{
-            $sql = "INSERT INTO membro (nome, curso, cargo, foto) VALUES (:nome, curso, cargo, foto)";
+            $sql = "INSERT INTO membro (nome, curso, cargo, foto) VALUES (:nome, :curso, :cargo, :foto)";
             $ps = $this->dao->getConexao()->prepare($sql);
             $ps->bindValue(":id", $membro->getId());
             $ps->bindValue(":Nome", $membro->getNome());
@@ -48,18 +48,15 @@ class MembroDAO{
         }
     }
 
-    public function excluir(Membro $membro){
-        try{
-            $sql = "DELETE FROM membro  WHERE id, Nome, Curso, Cargo, Foto = :id, Nome, Curso, Cargo, Foto";
-            $ps = $this->dao->getConexao()->prepare($sql);
-            $ps->bindValue(":id", $membro->getId());
-            $ps->bindValue(":Nome", $membro->getNome());
-            $ps->bindValue(":Curso", $membro->getCurso());
-            $ps->bindValue(":Cargo", $membro->getCargo());
-            $ps->bindValue(":Foto", $membro->getFoto());
-            return $ps->execute();
 
-        }catch(Exception  $e){
+    public function excluir(Membro $membro){
+
+        try{
+            $sql = "DELETE FROM Membro WHERE id = :id";
+            $ps = $this->dao->getConexao()->prepare($sql);         
+            $ps->bindValue(":id", $membro->getId());
+            return $ps->execute();
+        } catch(Exception $e){
             return 0;
         }
     }

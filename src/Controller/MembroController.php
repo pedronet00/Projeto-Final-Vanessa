@@ -3,13 +3,17 @@
 namespace Php\Empresajrtoledo\Controller;
 
 use Php\Empresajrtoledo\Model\DAO\MembroDAO;
+use Php\Empresajrtoledo\Model\Entity\Membro;
 
 class MembroController
 {
-    // ...
+     //HTTP GET
+     public function parceiro() {
+        require '../src/View/Membro/Tabela.php';
+    }
 
     public function inserir()
-    {
+    {   
         // Página para inserir um novo registro com campos Nome, Curso, Cargo e Foto.
         require '../src/View/Membro/inserir.php';
     }
@@ -32,53 +36,47 @@ class MembroController
         require '../src/View/Funcoes/excluir.php';
     }
 
-    public function gravar()
-    {
-        $Nome = $_POST['Nome'];
-        $Curso = $_POST['Curso'];
-        $Cargo = $_POST['Cargo'];
-        $Foto = $_POST['Foto'];
-
-        // Lógica para gravar os dados no banco de dados usando FuncoesDAO
-        $MembroDAO = new MembroDAO();
+    public function gravar(){
         session_start();
-        if ($MembroDAO->inserir($Nome, $Curso, $Cargo, $Foto)) {
-            $_SESSION['gravar'] = true;
-        } else {
-            $_SESSION['gravar'] = false;
+        $dir = "membros/";
+        $upload_file = $dir . basename($_FILES['foto']['name']);
+        if(move_uploaded_file($_FILES["foto"]["tmp_name"], $upload_file)){
+            $Membro = new Membro('', $_POST['nome'], $upload_file, $_POST['curso'],$upload_file ,$_POST['cargo']);
+            $MembroDAO = new MembroDAO();
+            if ($MembroDAO->inserir($Membro)){
+                $_SESSION['gravar'] = true;
+            }else {
+                $_SESSION['gravar'] = false;
+            }
+            $this->index();
+        }else{
+            $_SESSION['arquivo'] = false;
         }
-        $this->index();
     }
 
-    public function editar($params)
-    {
-        $id = $params[1];
-        $Nome = $_POST['Nome'];
-        $Curso = $_POST['Curso'];
-        $Cargo = $_POST['Cargo'];
-        $Foto = $_POST['Foto'];
-
-        // Lógica para editar os dados no banco de dados usando FuncoesDAO
+    public function editar($params){
+        $Membro = new Membro($params[1], $_POST['nome'],$_POST['curso'],$_POST['cargo'], $_POST['foto']);
         $MembroDAO = new MembroDAO();
         session_start();
-        if ($MembroDAO->alterar($id, $Nome, $Curso, $Cargo, $Foto)) {
+        if ($MembroDAO->alterar($Membro)){
             $_SESSION['editar'] = true;
-        } else {
+        }else {
             $_SESSION['editar'] = false;
         }
         $this->index();
     }
 
-    public function deletar($params)
-    {
-        $id = $params[1];
 
-        // Lógica para excluir o registro do banco de dados usando FuncoesDAO
+    public function deletar($params){
+        $id = $params[1];
         $MembroDAO = new MembroDAO();
+        $resultado = $MembroDAO->consultarPorId($id);
+        $Membro = new Membro($params[1], "", "", "", "");
         session_start();
-        if ($MembroDAO->excluir($id)) {
+        if ($MembroDAO->excluir($Membro)){
+            unlink($resultado['imagem']);
             $_SESSION['deletar'] = true;
-        } else {
+        }else {
             $_SESSION['deletar'] = false;
         }
         $this->index();

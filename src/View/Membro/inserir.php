@@ -1,51 +1,51 @@
 <?php
-require '../src/View/Header.php';
+    //require '../src/View/Header.php';
 ?>
 
-<div class="container">
 <h1>Inserir Membros</h1>
-    <form method="post" action="/noticia/gravar">
-    <input type="hidden" class="form-control" name="usuario_id" id="usuario_id" value="1" />
-        <div class="row">
-            <div class="col">
-                <label for="titulo" class="form-label">
-                    Informe o Nome:
-                </label>
-                <input type="text" class="form-control" placeholder="Insira o Nome" name="Nome" id="Nome" require />
-            </div>
+
+<div class="container mt-5">
+
+    <form method="post" action="/Parceiro/gravar" enctype="multipart/form-data">
+
+    <div class="row">
+      <div class="col">
+          <label for="nome" class="form-label">Informe o Nome: </label>
+          <input type="text" name="nome" id="nome" class="form-control" required/> 
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+          <label for="curso" class="form-label">Informe o Curso: </label>
+          <input type="text" name="curso" id="curso" class="form-control" required/> 
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+          <label for="cargo" class="form-label">Informe o Cargo: </label>
+          <input type="text" name="cargo" id="cargo" class="form-control" required/> 
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+          <label for="imagem" class="form-label">Insira a imagem do Membro: </label>
+          <input type="file" name="imagem" id="imagem" class="form-control" required/> 
+      </div>
+    </div>
+
+    <div class="row"> 
+        <div class="col">
+            <button type="submit" class="btn btn-secondary mt-3 mb-3">Gravar</button>
         </div>
-        
-        <div class="row">
-            <div class="col">
-                <label for="data_noticia" class="form-label">
-                    Informe o Curso:
-                </label>
-                <input type="text" class="form-control" id="Curso" placeholder="Insira o Curso">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-            <label for="formName" class="form-label">Informe o Cargo</label>
-        <input type="text" class="form-control" id="Cargo" placeholder="Insira o Cargo">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <label for="texto" class="form-label">
-                    Envie sua Foto:
-                </label>
-                <input type="file" class="form-control-file mt-3" id="formFoto">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button type="submit" class="btn btn-secondary mt-3 mb-3">
-                    Inserir
-                </button>
-            </div>
-        </div>
+    </div>
+
     </form>
 </div>
+
 <?php
-require '../src/View/Footer.php';
-?>
+    //require '../src/View/Footer.php';
+
+    
