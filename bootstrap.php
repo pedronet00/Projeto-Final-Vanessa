@@ -7,6 +7,94 @@ $path = $_SERVER['PATH_INFO'] ?? '/';
 
 $router = new \Php\Empresajrtoledo\Router($method, $path);
 
+$router->get("/depoimento/inserir",
+    'Php\Empresajrtoledo\Controller\DepoimentoController@inserir'
+);
+
+$router->post("/depoimento/gravar",
+    'Php\Empresajrtoledo\Controller\DepoimentoController@gravar'
+);
+
+$router->get("/depoimento/index",
+    'Php\Empresajrtoledo\Controller\DepoimentoController@index'
+);
+
+$router->get("/depoimento/alterar/{id}",
+    'Php\Empresajrtoledo\Controller\DepoimentoController@alterar'
+);
+
+$router->get("/depoimento/excluir/{id}",
+    'Php\Empresajrtoledo\Controller\DepoimentoController@excluir'
+);
+
+$router->post("/depoimento/editar/{id}",
+    'Php\Empresajrtoledo\Controller\DepoimentoController@editar'
+);
+
+$router->post("/depoimento/deletar/{id}",
+    'Php\Empresajrtoledo\Controller\DepoimentoController@deletar'
+);
+
+$router->get("/noticia/inserir",
+    'Php\Empresajrtoledo\Controller\NoticiaController@inserir'
+);
+
+$router->post("/noticia/gravar",
+    'Php\Empresajrtoledo\Controller\NoticiaController@gravar'
+);
+
+$router->get("/noticia/index",
+    'Php\Empresajrtoledo\Controller\NoticiaController@index'
+);
+
+$router->get("/noticial/alterar/{id}",
+    'Php\Empresajrtoledo\Controller\NoticiaController@alterar'
+);
+
+$router->get("/noticia/excluir/{id}",
+    'Php\Empresajrtoledo\Controller\NoticiaController@excluir'
+);
+
+$router->post("/noticia/editar/{id}",
+    'Php\Empresajrtoledo\Controller\NoticiaController@editar'
+);
+
+$router->post("/depoimento/deletar/{id}",
+    'Php\Empresajrtoledo\Controller\DepoimentoController@deletar'
+);
+
+$router->get("/Parceiro/parceiro",
+    'Php\Empresajrtoledo\Controller\ParceiroController@parceiro'
+);
+
+$router->get("/Parceiro/index",
+    'Php\Empresajrtoledo\Controller\ParceiroController@index'
+);
+
+$router->get("/Parceiro/inserir",
+    'Php\Empresajrtoledo\Controller\ParceiroController@inserir'
+);
+
+$router->get("/Parceiro/alterar/{id}",
+    'Php\Empresajrtoledo\Controller\ParceiroController@alterar'
+);
+
+$router->get("/Parceiro/excluir/{id}",
+    'Php\Empresajrtoledo\Controller\ParceiroController@excluir'
+);
+
+$router->post("/Parceiro/gravar",
+    'Php\Empresajrtoledo\Controller\ParceiroController@gravar'
+);
+
+$router->post("/Parceiro/deletar/{id}",
+    'Php\Empresajrtoledo\Controller\ParceiroController@deletar'
+);
+
+$router->post("/Parceiro/editar/{id}",
+    'Php\Empresajrtoledo\Controller\ParceiroController@editar'
+);
+
 $resultado = $router->handler();
 
 if (!$resultado){

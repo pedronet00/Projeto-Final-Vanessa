@@ -5,19 +5,21 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema banco_php
+-- Schema empresa_junior
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema banco_php
+-- Schema empresa_junior
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `empresa_junior` DEFAULT CHARACTER SET utf8 ;
-USE `banco_php` ;
+
+USE `empresa_junior` ;
+
 
 -- -----------------------------------------------------
--- Table `banco_php`.`categoria`
+-- Table `empresa_junior`.`categoria`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `banco_php`.`categoria` (
+CREATE TABLE IF NOT EXISTS `empresa_junior`.`categoria` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(150) NOT NULL,
   PRIMARY KEY (`id`))
@@ -25,9 +27,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `banco_php`.`produto`
+-- Table `empresa_junior`.`produto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `banco_php`.`produto` (
+CREATE TABLE IF NOT EXISTS `empresa_junior`.`produto` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(150) NOT NULL,
   `valor` DECIMAL(8,2) NOT NULL,
@@ -36,16 +38,16 @@ CREATE TABLE IF NOT EXISTS `banco_php`.`produto` (
   INDEX `fk_produto_categoria_idx` (`categoria_id` ASC),
   CONSTRAINT `fk_produto_categoria`
     FOREIGN KEY (`categoria_id`)
-    REFERENCES `banco_php`.`categoria` (`id`)
+    REFERENCES `empresa_junior`.`categoria` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `banco_php`.`usuario`
+-- Table `empresa_junior`.`usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `banco_php`.`usuario` (
+CREATE TABLE IF NOT EXISTS `empresa_junior`.`usuario` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(150) NOT NULL,
   `senha` TEXT NOT NULL,
@@ -54,9 +56,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `banco_php`.`noticia`
+-- Table `empresa_junior`.`noticia`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `banco_php`.`noticia` (
+CREATE TABLE IF NOT EXISTS `empresa_junior`.`noticia` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `titulo` VARCHAR(150) NOT NULL,
   `usuario_id` INT NOT NULL,
@@ -68,16 +70,16 @@ CREATE TABLE IF NOT EXISTS `banco_php`.`noticia` (
   INDEX `fk_noticia_usuario1_idx` (`usuario_id` ASC),
   CONSTRAINT `fk_noticia_usuario1`
     FOREIGN KEY (`usuario_id`)
-    REFERENCES `banco_php`.`usuario` (`id`)
+    REFERENCES `empresa_junior`.`usuario` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `banco_php`.`membro`
+-- Table `empresa_junior`.`membro`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `banco_php`.`membro` (
+CREATE TABLE IF NOT EXISTS `empresa_junior`.`membro` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(150) NOT NULL,
   `curso` VARCHAR(150) NOT NULL,
@@ -88,9 +90,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `banco_php`.`servico`
+-- Table `empresa_junior`.`servico`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `banco_php`.`servico` (
+CREATE TABLE IF NOT EXISTS `empresa_junior`.`servico` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(150) NOT NULL,
   `descricao` TEXT NOT NULL,
@@ -100,9 +102,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `banco_php`.`parceiro`
+-- Table `empresa_junior`.`parceiro`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `banco_php`.`parceiro` (
+CREATE TABLE IF NOT EXISTS `empresa_junior`.`parceiro` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(150) NOT NULL,
   `descricao` TEXT NOT NULL,
@@ -112,9 +114,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `banco_php`.`processo_seletivo_membro`
+-- Table `empresa_junior`.`processo_seletivo_membro`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `banco_php`.`processo_seletivo_membro` (
+CREATE TABLE IF NOT EXISTS `empresa_junior`.`processo_seletivo_membro` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(150) NOT NULL,
   `email` VARCHAR(150) NOT NULL,
@@ -127,9 +129,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `banco_php`.`processo_seletivo_consultores`
+-- Table `empresa_junior`.`processo_seletivo_consultores`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `banco_php`.`processo_seletivo_consultores` (
+CREATE TABLE IF NOT EXISTS `empresa_junior`.`processo_seletivo_consultores` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(150) NOT NULL,
   `email` VARCHAR(150) NOT NULL,
@@ -142,9 +144,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `banco_php`.`depoimento`
+-- Table `empresa_junior`.`depoimento`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `banco_php`.`depoimento` (
+CREATE TABLE IF NOT EXISTS `empresa_junior`.`depoimento` (
   `id` INT NULL AUTO_INCREMENT,
   `nome` VARCHAR(150) NOT NULL,
   `curso` VARCHAR(150) NOT NULL,
@@ -155,9 +157,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `banco_php`.`ipt`
+-- Table `empresa_junior`.`ipt`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `banco_php`.`ipt` (
+CREATE TABLE IF NOT EXISTS `empresa_junior`.`ipt` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `data_inicial` DATE NOT NULL,
   `data_final` DATE NOT NULL,
