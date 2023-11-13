@@ -12,7 +12,9 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- Schema empresa_junior
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `empresa_junior` DEFAULT CHARACTER SET utf8 ;
+
 USE `empresa_junior` ;
+
 
 -- -----------------------------------------------------
 -- Table `empresa_junior`.`categoria`

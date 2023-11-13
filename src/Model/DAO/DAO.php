@@ -8,10 +8,9 @@ class DAO{
 
     private $conexao;
 
-    public function __construct()
-    {
-        $this->conexao = new PDO("mysql:localhost;port=3308;dbname=empresa_junior", "root", "");
-        
+    public function __construct(){
+        $this->conexao = new PDO("mysql:host=localhost;port=3306;dbname=empresa_junior","root", "JPontes062730");
+        #qual o banco, host, porta e nome do banco
     }
 
     public function getConexao(){
